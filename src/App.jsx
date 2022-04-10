@@ -93,14 +93,14 @@ const App = () => {
             }, 3000);
           })
           .catch(err => {
+            console.log(err.response.data.error);
             setMessage({
-              content: `Information for '${person.name}' has already been deleted from the server`,
+              content: err.response.data.error,
               messageType: 'error'
-            })
+            });
             setTimeout(() => {
               setMessage({});
             }, 3000);
-            setPersons(persons.filter(p => p.id !== id));
           })
       }
     } else {
