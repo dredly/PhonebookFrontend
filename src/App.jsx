@@ -1,21 +1,10 @@
 import { useState, useEffect } from 'react';
 import Notification from './components/Notification';
+import PersonForm from './components/PersonForm';
 import personService from './services/persons';
 
 const Filter = ({ searchText, handleSearch }) => (
   <p>Filter shown with <input value={searchText} onChange={handleSearch} /></p>
-);
-
-const PersonForm = (props) => (
-  <form onSubmit={props.addPerson}>
-    <div>
-      name: <input value={props.newName} onChange={props.handleNameChange} />
-      number: <input value={props.newNumber} onChange={props.handleNumberChange} />
-    </div>
-    <div>
-      <button type="submit">add</button>
-    </div>
-  </form>
 );
 
 const Person = (props) => (
